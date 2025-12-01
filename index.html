@@ -3,18 +3,10 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-
-  <!-- Título e descrição do site -->
   <title>Grêmio Edson Luís — IFES Campus Serra</title>
   <meta name="description" content="Grêmio Estudantil Edson Luís — IFES Campus Serra. Atas, estatuto, portal da transparência, chamados e contatos." />
-
-  <!-- Fonte -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-
   <style>
-    /* ========================  
-       VARIÁVEIS DE CORES/TEMA
-       ======================== */
     :root {
       --gel: #065b08;
       --gel-light: #1a7b2a;
@@ -28,7 +20,6 @@
       --maxw: 1180px;
     }
 
-    /* Reset básico */
     * {
       box-sizing: border-box;
       margin: 0;
@@ -43,15 +34,12 @@
       line-height: 1.6;
     }
 
-    /* Remove sublinhado dos links */
     a {
       color: inherit;
       text-decoration: none;
     }
 
-    /* ========================  
-       HEADER FIXO DO SITE
-       ======================== */
+    /* HEADER */
     header {
       background: linear-gradient(135deg, var(--gel), var(--gel-dark));
       color: white;
@@ -66,7 +54,6 @@
       box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
     }
 
-    /* Logo + texto */
     .brand {
       display: flex;
       align-items: center;
@@ -80,140 +67,291 @@
       border: 2px solid rgba(255, 255, 255, 0.15);
     }
 
-    /* Nome do grêmio */
     .brand-text h1 {
       font-size: 18px;
       font-weight: 700;
       margin: 0;
     }
 
-    /* Subtítulo */
     .brand-text span {
       font-size: 12px;
       opacity: 0.85;
     }
 
-    /* Menu principal */
     nav ul {
       display: flex;
       list-style: none;
       gap: 14px;
+      margin: 0;
+      padding: 0;
     }
 
     nav a {
+      color: rgba(255, 255, 255, 0.95);
       font-weight: 600;
       padding: 6px 10px;
       border-radius: 6px;
-      transition: 0.2s;
-      color: rgba(255, 255, 255, 0.95);
+      font-size: 15px;
+      transition: background 0.2s;
     }
 
     nav a:hover {
       background: rgba(255, 255, 255, 0.12);
     }
 
-    /* ========================  
-       BANNER DE ABERTURA
-       ======================== */
     .banner {
       background-color: #065b08;
-      color: white;
+      color: #fff;
       text-align: center;
       padding: 140px 20px 100px;
       background-image: linear-gradient(rgba(6,91,8,0.85), rgba(6,91,8,0.85)), url("assets/logo.jpeg");
+      background-repeat: no-repeat;
       background-position: center;
       background-size: 180px;
     }
-
-    /* Título do banner */
     .banner h1 {
       font-size: 2.3rem;
       margin-bottom: 10px;
     }
-
-    /* Subtítulo do banner */
     .banner p {
-      opacity: 0.9;
       font-size: 1.1rem;
+      opacity: 0.9;
     }
 
-    /* ========================  
-       BOTÃO DO WHATSAPP (FLUTUANTE)
-       ======================== */
     .botao-Whatsapp {
       display: inline-block;
-      background: #40c351;
-      color: white;
-      padding: 0.6em 1.2em;
-      border-radius: 50px;
       position: relative;
       overflow: hidden;
-      transition: 0.2s;
-      font-weight: bold;
+      z-index: 1;
+      text-decoration: none;
+      color: #ffffff;
+      font-size: 18px;
+      padding: 0.6em 1.2em 0.5em 1.2em;
+      border-radius: 50px;
+      background: #40c351;
+      border: 1px solid #40c351;
+      transition: all 0.2s ease-in;
     }
 
-    /* ========================  
-       SEÇÕES DO SITE
-       ======================== */
+    .botao-Whatsapp span { 
+      position: relative;
+      margin-left: 35px;
+      font-weight: bold; 
+    }
+
+    .botao-Whatsapp > svg {
+      height: 30px;
+      position: absolute;
+      padding: 0px;
+      margin-top: -4px;
+    }
+
+    .botao-Whatsapp:active {
+      color: #666;
+      box-shadow: inset 4px 4px 12px #c5c5c5,
+                 inset -4px -4px 12px #ffffff;
+    }
+
+    .botao-Whatsapp:before {
+      content: "";
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%) scaleY(1) scaleX(1.25);
+      top: 100%;
+      width: 140%;
+      height: 180%;
+      background-color: rgba(0, 0, 0, 0.05);
+      border-radius: 50%;
+      display: block;
+      transition: all 0.5s 0.1s cubic-bezier(0.55, 0, 0.1, 1);
+      z-index: -1;
+    }
+
+    .botao-Whatsapp:after {
+      content: "";
+      position: absolute;
+      left: 55%;
+      transform: translateX(-50%) scaleY(1) scaleX(1.45);
+      top: 180%;
+      width: 160%;
+      height: 190%;
+      background-color: #40c351;
+      border-radius: 50%;
+      display: block;
+      transition: all 0.5s 0.1s cubic-bezier(0.55, 0, 0.1, 1);
+      z-index: -1;
+    }
+
+    .botao-Whatsapp:hover {
+      color: #40c351;
+      border: 1px solid #2e2e2e;
+    }
+
+    .botao-Whatsapp:hover:before {
+      top: -35%;
+      background-color: #40c351;
+      transform: translateX(-50%) scaleY(1.3) scaleX(0.8);
+    }
+
+    .botao-Whatsapp:hover:after {
+      top: -45%;
+      background-color: #2e2e2e;
+      transform: translateX(-50%) scaleY(1.3) scaleX(0.8);
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 12px 22px;
+      border-radius: 10px;
+      font-weight: 600;
+      font-size: 16px;
+      text-align: center;
+      transition: transform 0.2s, box-shadow 0.2s;
+      box-shadow: 0 6px 18px rgba(6, 91, 8, 0.2);
+    }
+
+    .btn-primary {
+      background: white;
+      color: var(--gel);
+    }
+
+    .btn-secondary {
+      background: transparent;
+      border: 2px solid rgba(255, 255, 255, 0.3);
+      color: white;
+    }
+
+    .btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 24px rgba(6, 91, 8, 0.3);
+    }
+
+    /* SECTIONS */
     main {
       padding-top: 20px;
     }
 
-    /* Cada seção */
     section {
       padding: 70px 20px;
       max-width: var(--maxw);
-      margin: auto;
+      margin: 0 auto;
     }
 
-    /* Títulos das seções */
     section h2 {
       color: var(--gel);
-      font-size: 1.8rem;
       margin-bottom: 16px;
-      border-left: 4px solid var(--gel);
+      font-size: 1.8rem;
+      font-weight: 700;
       padding-left: 12px;
+      border-left: 4px solid var(--gel);
     }
 
-    /* Texto de introdução */
     .lead {
       color: var(--text-muted);
       max-width: 800px;
       margin-bottom: 24px;
     }
 
-    /* Cartões padrão */
-    .card {
+    /* PANELS & CARDS */
+    .panel {
       background: var(--card);
       padding: 24px;
       border-radius: 14px;
       box-shadow: var(--shadow);
       border: 1px solid var(--border);
-      transition: 0.25s;
     }
 
-    .card:hover {
-      transform: translateY(-6px);
-    }
-
-    /* Cards em grade */
     .cards {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
       gap: 24px;
+      margin-top: 20px;
     }
 
-    /* Painel branco com borda */
-    .panel {
+    .card {
       background: var(--card);
-      padding: 24px;
+      border-radius: 14px;
+      box-shadow: var(--shadow);
+      border: 1px solid var(--border);
+      transition: transform 0.25s, box-shadow 0.25s;
+      overflow: hidden;
+    }
+
+    .card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 10px 30px rgba(6, 91, 8, 0.12);
+    }
+
+    .card-img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      display: block;
+    }
+
+    .card-body {
+      padding: 18px;
+    }
+
+    .card h3 {
+      color: var(--gel);
+      margin-bottom: 12px;
+      font-size: 1.3rem;
+    }
+
+    .card p {
+      color: var(--text-muted);
+      margin-bottom: 16px;
+    }
+
+    /* LINKS LIST */
+    .links {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .links a {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 14px;
+      background: var(--card);
       border: 1px solid var(--border);
       border-radius: 12px;
+      font-weight: 600;
+      color: var(--gel);
     }
 
-    /* ========================  
-       FOOTER
-       ======================== */
+    /* CONTACT */
+    .contact-info {
+      margin: 20px 0;
+    }
+
+    .contact-info p {
+      margin: 8px 0;
+      font-size: 16px;
+    }
+
+    .contact-buttons {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-top: 16px;
+    }
+
+    .contact-btn {
+      padding: 10px 18px;
+      border-radius: 10px;
+      font-weight: 600;
+      background: var(--card);
+      border: 1px solid var(--border);
+      color: var(--gel);
+    }
+
+    /* FOOTER */
     footer {
       background: #0a0a0c;
       color: #ddd;
@@ -221,39 +359,97 @@
       margin-top: 60px;
     }
 
-    /* Grade do rodapé */
     .footer-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
       gap: 30px;
       max-width: var(--maxw);
-      margin: auto;
+      margin: 0 auto 30px;
     }
 
-    /* ========================  
-       RESPONSIVIDADE (CELULAR)
-       ======================== */
+    .footer-col h3 {
+      color: white;
+      margin-bottom: 16px;
+      font-size: 1.2rem;
+    }
+
+    .footer-col ul {
+      list-style: none;
+    }
+
+    .footer-col ul li {
+      margin-bottom: 10px;
+    }
+
+    .footer-col a {
+      color: #b8b8b8;
+      transition: color 0.2s;
+    }
+
+    .footer-col a:hover {
+      color: white;
+    }
+
+    .footer-bottom {
+      text-align: center;
+      color: #888;
+      font-size: 14px;
+      max-width: var(--maxw);
+      margin: 0 auto;
+      padding-top: 20px;
+      border-top: 1px solid #222;
+    }
+
+    /* FLOATING BUTTON */
+    .float-whatsapp {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      background: #25D366;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 24px;
+      box-shadow: 0 6px 20px rgba(37, 211, 102, 0.5);
+      z-index: 90;
+    }
+
+    /* RESPONSIVE */
     @media (max-width: 768px) {
-      nav ul { display: none; } /* Esconde menu no mobile */
-      .banner h1 { font-size: 2rem; }
+      .banner {
+        padding: 120px 16px 90px;
+      }
+      .banner h1 {
+        font-size: 2rem;
+      }
+      nav ul {
+        display: none;
+      }
+      .brand-text h1 {
+        font-size: 16px;
+      }
+      .btn {
+        width: 100%;
+        max-width: 300px;
+      }
     }
   </style>
 </head>
-
 <body>
 
-<!-- HEADER FIXO -->
 <header>
   <div class="brand">
-    <img src="assets/logo.jpeg" alt="Logo do Grêmio">
+    <img src="assets/logo.jpeg" alt="Logo GEL">
     <div class="brand-text">
       <h1>Grêmio Edson Luís (GEL)</h1>
       <span>IFES — Campus Serra</span>
     </div>
   </div>
-
-  <!-- MENU DE NAVEGAÇÃO -->
-  <nav>
+  <nav aria-label="Navegação principal">
     <ul>
       <li><a href="#inicio">Início</a></li>
       <li><a href="quem-somos.html">Quem Somos</a></li>
@@ -265,68 +461,159 @@
   </nav>
 </header>
 
-<!-- BANNER PRINCIPAL -->
 <div class="banner" id="inicio">
   <h1>Grêmio Edson Luís</h1>
-  <p>Representando os estudantes com transparência e compromisso.</p>
+  <p>IFES Campus Serra — Representando os estudantes com transparência e compromisso.</p>
 </div>
 
-<!-- CONTEÚDO PRINCIPAL -->
 <main>
-  <!-- Eventos -->
-  <section id="eventos">
+
+  <section id="eventos" style="background: #f0faf0;">
     <h2>Próximos Eventos</h2>
-    <p class="lead">Fique por dentro das ações do grêmio.</p>
-
+    <p class="lead">Confira os destaques do GEL e participe!</p>
     <div class="cards">
-      <div class="card"><h3>I Colóquio</h3><p>Data a divulgar.</p></div>
-      <div class="card"><h3>Assembleia Geral</h3><p>Decisões coletivas.</p></div>
-      <div class="card"><h3>Atividades Culturais</h3><p>Oficinas e ações.</p></div>
-    </div>
-  </section>
-
-  <!-- Atas -->
-  <section id="atas">
-    <h2>Atas de Reuniões</h2>
-    <div class="panel">
-      <a href="https://drive.google.com/drive/folders/10QuvgD7Xl5esvM2IfkHD6day63jrsGih" target="_blank">
-        📁 Ver todas as atas
+      <!-- CARD 1 -->
+      <a href="manchete1.html" class="card">
+        <img src="assets/manchete1.jpg" alt="Inscrições JICS 2025/2" class="card-img">
+        <div class="card-body">
+          <h3>Inscrições Abertas para o JICS 2025/2!</h3>
+        </div>
+      </a>
+      <!-- CARD 2 -->
+      <a href="manchete2.html" class="card">
+        <img src="assets/manchete2.png" alt="Natal Solidário do Campus" class="card-img">
+        <div class="card-body">
+          <h3>Doe e Espalhe Solidariedade: Natal do Campus!</h3>
+        </div>
+      </a>
+      <!-- CARD 3 -->
+      <a href="manchete3.html" class="card">
+        <img src="assets/manchete3.png" alt="Encontro Nacional dos Grêmios" class="card-img">
+        <div class="card-body">
+          <h3>GEL no Encontro Nacional dos Grêmios dos IFs!</h3>
+        </div>
       </a>
     </div>
   </section>
 
-  <!-- Transparência -->
-  <section id="transparencia">
-    <h2>Transparência & Estatuto</h2>
-    <div class="cards">
-      <!-- Cada card é um link para Drive -->
+  <section id="atas">
+    <h2>Atas de Reuniões</h2>
+    <p class="lead">Acesso direto à pasta de atas — arquivos oficiais no Google Drive.</p>
+    <div class="panel links">
+      <a href="https://drive.google.com/drive/folders/10QuvgD7Xl5esvM2IfkHD6day63jrsGih" target="_blank" rel="noopener">📁 Ver todas as atas no Google Drive</a>
     </div>
   </section>
 
-  <!-- Contato -->
+  <section id="transparencia" style="background: #f0faf0;">
+    <h2>Transparência & Estatuto</h2>
+    <p class="lead">Documentos públicos: finanças, estatuto e relatórios.</p>
+    <div class="cards">
+      <div class="card">
+        <h3>Portal da Transparência</h3>
+        <p>Relatórios e documentos públicos.</p>
+        <a class="btn btn-primary" href="https://drive.google.com/drive/folders/123sGyXdS7y0qCO_SRdGo7ed4no-EUMF1" target="_blank">Abrir portal</a>
+      </div>
+      <div class="card">
+        <h3>Estatuto do GEL</h3>
+        <p>Normas e funcionamento do grêmio.</p>
+        <a class="btn btn-primary" href="https://drive.google.com/drive/folders/1rvzAy3WjFa5qCq0siNAreOcC9RqiyY3A" target="_blank">Ver estatuto</a>
+      </div>
+      <div class="card">
+        <h3>Abrir Chamado (CGEL)</h3>
+        <p>Formulário para denúncias, solicitações e sugestões.</p>
+        <a class="btn btn-primary" href="https://docs.google.com/forms/d/e/1FAIpQLScIrUU1PQ4J9NRL0b2DS24kxXPCrdt6qGpL0rTi-_U5-F_8vw/viewform" target="_blank">Abrir chamado</a>
+      </div>
+    </div>
+  </section>
+
   <section id="contato">
     <h2>Contato</h2>
+    <p class="lead">Canais oficiais do GEL.</p>
     <div class="panel">
-      <p><strong>Email:</strong> gel.sr@ifes.edu.br</p>
-      <p><strong>WhatsApp:</strong> (27) 99688-2905</p>
-      <p><strong>Instagram:</strong> @ifes.gel</p>
+      <div class="contact-info">
+        <p><strong>Email:</strong> 
+          <a href="mailto:gel.sr@ifes.edu.br" style="color:#0000EE; text-decoration:underline;">
+            gel.sr@ifes.edu.br
+          </a>
+        </p>
+        <p><strong>WhatsApp:</strong> <a href="https://api.whatsapp.com/send?phone=27996882905" style="color: #0000EE; text-decoration: underline;" target="_blank">(27) 99688-2905 (Número da Presidente)</a></p>
+        <p><strong>Instagram:</strong> <a href="https://www.instagram.com/ifes.gel/" style="color: #0000EE; text-decoration: underline;" target="_blank">@ifes.gel</a></p>
+      </div>
+      <div class="contact-buttons">
+        <a href="https://api.whatsapp.com/send?phone=27996882905" class="botao-Whatsapp">        
+           <svg viewBox="0 0 48 48" y="0px" x="0px" xmlns="http://www.w3.org/2000/svg">
+            <path d="M4.868,43.303l2.694-9.835C5.9,30.59,5.026,27.324,5.027,23.979C5.032,13.514,13.548,5,24.014,5c5.079,0.002,9.845,1.979,13.43,5.566c3.584,3.588,5.558,8.356,5.556,13.428c-0.004,10.465-8.522,18.98-18.986,18.98c-0.001,0,0,0,0,0h-0.008c-3.177-0.001-6.3-0.798-9.073-2.311L4.868,43.303z" fill="#fff"></path><path d="M4.868,43.803c-0.132,0-0.26-0.052-0.355-0.148c-0.125-0.127-0.174-0.312-0.127-0.483l2.639-9.636c-1.636-2.906-2.499-6.206-2.497-9.556C4.532,13.238,13.273,4.5,24.014,4.5c5.21,0.002,10.105,2.031,13.784,5.713c3.679,3.683,5.704,8.577,5.702,13.781c-0.004,10.741-8.746,19.48-19.486,19.48c-3.189-0.001-6.344-0.788-9.144-2.277l-9.875,2.589C4.953,43.798,4.911,43.803,4.868,43.803z" fill="#fff"></path><path d="M24.014,5c5.079,0.002,9.845,1.979,13.43,5.566c3.584,3.588,5.558,8.356,5.556,13.428c-0.004,10.465-8.522,18.98-18.986,18.98h-0.008c-3.177-0.001-6.3-0.798-9.073-2.311L4.868,43.303l2.694-9.835C5.9,30.59,5.026,27.324,5.027,23.979C5.032,13.514,13.548,5,24.014,5 M24.014,42.974C24.014,42.974,24.014,42.974,24.014,42.974C24.014,42.974,24.014,42.974,24.014,42.974 M24.014,42.974C24.014,42.974,24.014,42.974,24.014,42.974C24.014,42.974,24.014,42.974,24.014,42.974 M24.014,4C24.014,4,24.014,4,24.014,4C12.998,4,4.032,12.962,4.027,23.979c-0.001,3.367,0.849,6.685,2.461,9.622l-2.585,9.439c-0.094,0.345,0.002,0.713,0.254,0.967c0.19,0.192,0.447,0.297,0.711,0.297c0.085,0,0.17-0.011,0.254-0.033l9.687-2.54c2.828,1.468,5.998,2.243,9.197,2.244c11.024,0,19.99-8.963,19.995-19.98c0.002-5.339-2.075-10.359-5.848-14.135C34.378,6.083,29.357,4.002,24.014,4L24.014,4z" fill="#cfd8dc"></path><path d="M35.176,12.832c-2.98-2.982-6.941-4.625-11.157-4.626c-8.704,0-15.783,7.076-15.787,15.774c-0.001,2.981,0.833,5.883,2.413,8.396l0.376,0.597l-1.595,5.821l5.973-1.566l0.577,0.342c2.422,1.438,5.2,2.198,8.032,2.199h0.006c8.698,0,15.777-7.077,15.78-15.776C39.795,19.778,38.156,15.814,35.176,12.832z" fill="#40c351"></path><path clip-rule="evenodd" d="M19.268,16.045c-0.355-0.79-0.729-0.806-1.068-0.82c-0.277-0.012-0.593-0.011-0.909-0.011c-0.316,0-0.83,0.119-1.265,0.594c-0.435,0.475-1.661,1.622-1.661,3.956c0,2.334,1.7,4.59,1.937,4.906c0.237,0.316,3.282,5.259,8.104,7.161c4.007,1.58,4.823,1.266,5.693,1.187c0.87-0.079,2.807-1.147,3.202-2.255c0.395-1.108,0.395-2.057,0.277-2.255c-0.119-0.198-0.435-0.316-0.909-0.554s-2.807-1.385-3.242-1.543c-0.435-0.158-0.751-0.237-1.068,0.238c-0.316,0.474-1.225,1.543-1.502,1.859c-0.277,0.317-0.554,0.357-1.028,0.119c-0.474-0.238-2.002-0.738-3.815-2.354c-1.41-1.257-2.362-2.81-2.639-3.285c-0.277-0.474-0.03-0.731,0.208-0.968c0.213-0.213,0.474-0.554,0.712-0.831c0.237-0.277,0.316-0.475,0.474-0.791c0.158-0.317,0.079-0.594-0.04-0.831C20.612,19.329,19.69,16.983,19.268,16.045z" fill-rule="evenodd" fill="#fff"></path>
+        </svg>
+        <span>WhatsApp</span>
+      </a>
+      </div>
     </div>
   </section>
+
 </main>
 
-<!-- RODAPÉ -->
+<!-- FLOATING WHATSAPP -->
+<a href="https://api.whatsapp.com/send?phone=27996882905" class="float-whatsapp" target="_blank" title="Fale conosco no WhatsApp">
+  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-whatsapp" viewBox="0 0 16 16">
+  <path d="M13.601 2.326A7.85 7.85 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.9 7.9 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.9 7.9 0 0 0 13.6 2.326zM7.994 14.521a6.6 6.6 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.56 6.56 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592m3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.73.73 0 0 0-.529.247c-.182.198-.691.677-.691 1.654s.71 1.916.81 2.049c.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232"/>
+</svg>
+</a>
+
 <footer>
   <div class="footer-grid">
     <div class="footer-col">
-      <h3>GEL</h3>
-      <p>Grêmio Estudantil Edson Luís.</p>
+      <h3>Grêmio Edson Luís</h3>
+      <p>IFES Campus Serra<br>Av. dos Sabiás, 330<br>Morada de Laranjeiras — Serra • ES</p>
+    </div>
+    <div class="footer-col">
+      <h3>Navegação</h3>
+      <ul>
+        <li><a href="#eventos">Eventos</a></li>
+        <li><a href="quem-somos.html">Quem Somos</a></li>
+        <li><a href="#transparencia">Transparência</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h3>Transparência</h3>
+      <ul>
+        <li><a href="https://drive.google.com/drive/folders/1rvzAy3WjFa5qCq0siNAreOcC9RqiyY3A" target="_blank">Estatuto</a></li>
+        <li><a href="https://drive.google.com/drive/folders/10QuvgD7Xl5esvM2IfkHD6day63jrsGih" target="_blank">Atas</a></li>
+        <li><a href="https://drive.google.com/drive/folders/123sGyXdS7y0qCO_SRdGo7ed4no-EUMF1" target="_blank">Finanças</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h3>Redes</h3>
+      <ul>
+        <li><a href="https://www.instagram.com/ifes.gel/" target="_blank">Instagram</a></li>
+        <li><a href="https://api.whatsapp.com/send?phone=27996882905" target="_blank">WhatsApp</a></li>
+        <li><a href="mailto:gel.sr@ifes.edu.br">Email</a></li>
+      </ul>
     </div>
   </div>
-
   <div class="footer-bottom">
-    © 2025 — Grêmio Edson Luís
+    Grêmio Edson Luís — IFES Campus Serra © <span id="year">2025</span><br>
+    <span>Feito pela equipe do GEL</span>
   </div>
 </footer>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  // Smooth scroll com offset
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
+      const targetId = this.getAttribute('href');
+      if (targetId === '#') return;
+      const target = document.querySelector(targetId);
+      if (target) {
+        e.preventDefault();
+        const headerHeight = 72;
+        const targetPosition = target.getBoundingClientRect().top + window.pageYOffset - headerHeight;
+        window.scrollTo({ top: targetPosition, behavior: 'smooth' });
+      }
+    });
+  });
+</script>
 
 </body>
 </html>
