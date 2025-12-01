@@ -1,0 +1,318 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Encontro Nacional dos Grêmios — GEL</title>
+  <meta name="description" content="Grêmio Edson Luís participará do Encontro Nacional dos Grêmios Estudantis dos IFs. Saiba mais!" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --gel: #065b08;
+      --gel-light: #1a7b2a;
+      --gel-dark: #05460a;
+      --bg: #f9fbf9;
+      --card: #ffffff;
+      --text: #1a1a1a;
+      --text-muted: #555;
+      --border: #e4e8e4;
+      --shadow: 0 4px 20px rgba(6, 91, 8, 0.08);
+      --maxw: 1180px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Inter', system-ui, sans-serif;
+      background-color: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    /* HEADER */
+    header {
+      background: linear-gradient(135deg, var(--gel), var(--gel-dark));
+      color: white;
+      padding: 14px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 100;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .brand img {
+      height: 48px;
+      border-radius: 8px;
+      object-fit: cover;
+      border: 2px solid rgba(255, 255, 255, 0.15);
+    }
+
+    .brand-text h1 {
+      font-size: 18px;
+      font-weight: 700;
+      margin: 0;
+    }
+
+    .brand-text span {
+      font-size: 12px;
+      opacity: 0.85;
+    }
+
+    nav ul {
+      display: flex;
+      list-style: none;
+      gap: 14px;
+      margin: 0;
+      padding: 0;
+    }
+
+    nav a {
+      color: rgba(255, 255, 255, 0.95);
+      font-weight: 600;
+      padding: 6px 10px;
+      border-radius: 6px;
+      font-size: 15px;
+      transition: background 0.2s;
+    }
+
+    nav a:hover {
+      background: rgba(255, 255, 255, 0.12);
+    }
+
+    main {
+      padding-top: 100px;
+      max-width: var(--maxw);
+      margin: 0 auto;
+      padding-bottom: 60px;
+    }
+
+    .article-header {
+      position: relative;
+      margin-bottom: 32px;
+    }
+
+    .article-header img {
+      width: 100%;
+      height: 300px;
+      object-fit: cover;
+      border-radius: 14px 14px 0 0;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    }
+
+    .article-content {
+      background: var(--card);
+      padding: 32px;
+      border-radius: 0 0 14px 14px;
+      box-shadow: var(--shadow);
+      border: 1px solid var(--border);
+    }
+
+    .article-content h1 {
+      color: var(--gel);
+      font-size: 2.2rem;
+      margin-bottom: 16px;
+    }
+
+    .article-content p {
+      margin-bottom: 18px;
+      font-size: 1.05rem;
+    }
+
+    .back-link {
+      display: inline-block;
+      margin-bottom: 24px;
+      color: var(--gel);
+      font-weight: 600;
+      text-decoration: underline;
+    }
+
+    .destaque {
+      background: #e9f7ef;
+      padding: 16px;
+      border-radius: 10px;
+      border-left: 4px solid var(--gel);
+      margin: 20px 0;
+      font-weight: 500;
+    }
+
+    /* FOOTER */
+    footer {
+      background: #0a0a0c;
+      color: #ddd;
+      padding: 50px 20px 30px;
+      margin-top: 60px;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 30px;
+      max-width: var(--maxw);
+      margin: 0 auto 30px;
+    }
+
+    .footer-col h3 {
+      color: white;
+      margin-bottom: 16px;
+      font-size: 1.2rem;
+    }
+
+    .footer-col ul {
+      list-style: none;
+    }
+
+    .footer-col ul li {
+      margin-bottom: 10px;
+    }
+
+    .footer-col a {
+      color: #b8b8b8;
+      transition: color 0.2s;
+    }
+
+    .footer-col a:hover {
+      color: white;
+    }
+
+    .footer-bottom {
+      text-align: center;
+      color: #888;
+      font-size: 14px;
+      max-width: var(--maxw);
+      margin: 0 auto;
+      padding-top: 20px;
+      border-top: 1px solid #222;
+    }
+
+    @media (max-width: 768px) {
+      .article-header img {
+        height: 220px;
+      }
+      .article-content {
+        padding: 24px 20px;
+      }
+      .article-content h1 {
+        font-size: 1.8rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="brand">
+    <img src="assets/logo.jpeg" alt="Logo GEL">
+    <div class="brand-text">
+      <h1>Grêmio Edson Luís (GEL)</h1>
+      <span>IFES — Campus Serra</span>
+    </div>
+  </div>
+  <nav aria-label="Navegação principal">
+    <ul>
+      <li><a href="index.html">Início</a></li>
+      <li><a href="quem-somos.html">Quem Somos</a></li>
+      <li><a href="index.html#eventos">Eventos</a></li>
+      <li><a href="index.html#atas">Atas</a></li>
+      <li><a href="index.html#transparencia">Transparência</a></li>
+      <li><a href="index.html#contato">Contato</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main>
+  <a href="index.html" class="back-link">← Voltar para a página inicial</a>
+
+  <div class="article-header">
+    <img src="assets/ubes.png" alt="Encontro Nacional dos Grêmios Estudantis dos IFs">
+  </div>
+
+  <div class="article-content">
+    <h1>GEL no Encontro Nacional dos Grêmios dos IFs!</h1>
+
+    <p>
+      Nos dias <strong>4 a 7 de dezembro de 2025</strong>, o Grêmio Estudantil Edson Luís (GEL) estará representando o IFES Campus Serra no <strong>Encontro Nacional dos Grêmios Estudantis dos Institutos Federais</strong>!
+    </p>
+
+    <div class="destaque">
+      Uma delegação de estudantes do nosso campus participará do evento, trocando experiências, debatendo pautas nacionais e fortalecendo a luta estudantil em todo o Brasil.
+    </div>
+
+    <p>
+      O encontro é organizado pela <strong>União Brasileira dos Estudantes Secundaristas (UBES)</strong> e reúne grêmios de todas as regiões do país para discutir educação, democracia, direitos e participação juvenil.
+    </p>
+
+    <p>
+      Quer saber mais sobre o evento, a programação e as pautas nacionais? Acompanhe o perfil oficial da UBES:
+      <br><br>
+      <a href="https://www.instagram.com/ubesoficial/" target="_blank" style="color: #0066cc; text-decoration: underline; font-weight: 600;">@ubesoficial</a>
+    </p>
+
+    <p>
+      Representar nossa comunidade acadêmica nesse espaço é uma grande honra. Contamos com o apoio de todos vocês!
+    </p>
+  </div>
+</main>
+
+<footer>
+  <div class="footer-grid">
+    <div class="footer-col">
+      <h3>Grêmio Edson Luís</h3>
+      <p>IFES Campus Serra<br>Av. dos Sabiás, 330<br>Morada de Laranjeiras — Serra • ES</p>
+    </div>
+    <div class="footer-col">
+      <h3>Navegação</h3>
+      <ul>
+        <li><a href="index.html#eventos">Eventos</a></li>
+        <li><a href="quem-somos.html">Quem Somos</a></li>
+        <li><a href="index.html#transparencia">Transparência</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h3>Transparência</h3>
+      <ul>
+        <li><a href="https://drive.google.com/drive/folders/1rvzAy3WjFa5qCq0siNAreOcC9RqiyY3A" target="_blank">Estatuto</a></li>
+        <li><a href="https://drive.google.com/drive/folders/10QuvgD7Xl5esvM2IfkHD6day63jrsGih" target="_blank">Atas</a></li>
+        <li><a href="https://drive.google.com/drive/folders/123sGyXdS7y0qCO_SRdGo7ed4no-EUMF1" target="_blank">Finanças</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h3>Redes</h3>
+      <ul>
+        <li><a href="https://www.instagram.com/ifes.gel/" target="_blank">Instagram</a></li>
+        <li><a href="https://api.whatsapp.com/send?phone=27996882905" target="_blank">WhatsApp</a></li>
+        <li><a href="mailto:gel.sr@ifes.edu.br">Email</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    Grêmio Edson Luís — IFES Campus Serra © <span id="year">2025</span><br>
+    <span>Feito pela equipe do GEL</span>
+  </div>
+</footer>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+
+</body>
+</html>
