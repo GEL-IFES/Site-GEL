@@ -272,27 +272,16 @@
 
     .card {
       background: var(--card);
+      padding: 24px;
       border-radius: 14px;
       box-shadow: var(--shadow);
       border: 1px solid var(--border);
       transition: transform 0.25s, box-shadow 0.25s;
-      overflow: hidden;
     }
 
     .card:hover {
       transform: translateY(-6px);
       box-shadow: 0 10px 30px rgba(6, 91, 8, 0.12);
-    }
-
-    .card-img {
-      width: 100%;
-      height: 180px;
-      object-fit: cover;
-      display: block;
-    }
-
-    .card-body {
-      padding: 18px;
     }
 
     .card h3 {
@@ -304,6 +293,40 @@
     .card p {
       color: var(--text-muted);
       margin-bottom: 16px;
+    }
+
+    /* EVENT CARDS WITH IMAGE */
+    .event-card {
+      background: var(--card);
+      border-radius: 14px;
+      box-shadow: var(--shadow);
+      border: 1px solid var(--border);
+      transition: transform 0.25s, box-shadow 0.25s;
+      overflow: hidden;
+      text-decoration: none;
+      display: block;
+    }
+
+    .event-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 10px 30px rgba(6, 91, 8, 0.12);
+    }
+
+    .event-card img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      display: block;
+    }
+
+    .event-card .card-body {
+      padding: 18px;
+    }
+
+    .event-card h3 {
+      color: var(--gel);
+      margin: 0;
+      font-size: 1.3rem;
     }
 
     /* LINKS LIST */
@@ -468,27 +491,24 @@
 
 <main>
 
-  <section id="eventos" style="background: #f0faf0;">
+  <section id="eventos">
     <h2>Próximos Eventos</h2>
     <p class="lead">Confira os destaques do GEL e participe!</p>
     <div class="cards">
-      <!-- CARD 1 -->
-      <a href="manchete1.html" class="card">
-        <img src="assets/manchete1.jpg" alt="Inscrições JICS 2025/2" class="card-img">
+      <a href="manchete1.html" class="event-card">
+        <img src="assets/manchete1.jpg" alt="Inscrições JICS 2025/2">
         <div class="card-body">
           <h3>Inscrições Abertas para o JICS 2025/2!</h3>
         </div>
       </a>
-      <!-- CARD 2 -->
-      <a href="manchete2.html" class="card">
-        <img src="assets/manchete2.png" alt="Natal Solidário do Campus" class="card-img">
+      <a href="manchete2.html" class="event-card">
+        <img src="assets/manchete2.png" alt="Natal Solidário do Campus">
         <div class="card-body">
           <h3>Doe e Espalhe Solidariedade: Natal do Campus!</h3>
         </div>
       </a>
-      <!-- CARD 3 -->
-      <a href="manchete3.html" class="card">
-        <img src="assets/manchete3.png" alt="Encontro Nacional dos Grêmios" class="card-img">
+      <a href="manchete3.html" class="event-card">
+        <img src="assets/manchete3.png" alt="Encontro Nacional dos Grêmios">
         <div class="card-body">
           <h3>GEL no Encontro Nacional dos Grêmios dos IFs!</h3>
         </div>
@@ -500,7 +520,7 @@
     <h2>Atas de Reuniões</h2>
     <p class="lead">Acesso direto à pasta de atas — arquivos oficiais no Google Drive.</p>
     <div class="panel links">
-      <a href="https://drive.google.com/drive/folders/10QuvgD7Xl5esvM2IfkHD6day63jrsGih" target="_blank" rel="noopener">📁 Ver todas as atas no Google Drive</a>
+      <a href="https://drive.google.com/drive/folders/10QuvgD7Xl5esvM2IfkHD6day63jrsGih" target="_blank" rel="noopener">Ver todas as atas no Google Drive</a>
     </div>
   </section>
 
@@ -546,7 +566,6 @@
         </svg>
         <span>WhatsApp</span>
       </a>
-      </div>
     </div>
   </section>
 
